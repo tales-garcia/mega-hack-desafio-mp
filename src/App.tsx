@@ -4,19 +4,26 @@ import LinearGradient from 'react-native-linear-gradient';
 import {
   Dimensions,
   Image,
-  SafeAreaView,
   StatusBar,
   StyleSheet,
   Text,
   View,
 } from 'react-native';
 import statisticsIcon from '../images/statistics.png';
+import chargeIcon from '../images/charge.png';
+import pay from '../images/pay.png';
+import money from '../images/money.png';
+import moneyWhite from '../images/moneyWhite.png';
+import qrCode from '../images/qr-code.png';
+import payWhite from '../images/payWhite.png';
+import receive from '../images/receive.png';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const App = () => {
   return (
     <>
       <StatusBar barStyle="light-content" />
-      <SafeAreaView>
+      <View style={{ height: Dimensions.get('window').height, width: Dimensions.get('window').width, position: 'relative' }}>
         <View style={styles.header}>
           <View style={styles.topContent}>
             <View>
@@ -53,13 +60,60 @@ const App = () => {
             </View>
           </View>
         </View>
-        <View>
-
+        <ScrollView style={styles.mainContainer}>
+          <View style={styles.actionsContainer}>
+            <View style={{ justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
+              <View style={styles.actionSphere}>
+                <Image style={{ marginTop: -2 }} source={qrCode} />
+              </View>
+              <Text style={styles.actionText}>Código QR</Text>
+            </View>
+            <View style={{ justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
+              <View style={styles.actionSphere}>
+                <Image style={{ marginTop: -2 }} source={receive} />
+              </View>
+              <Text style={styles.actionText}>Adicionar dinheiro</Text>
+            </View>
+            <View style={{ justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
+              <View style={styles.actionSphere}>
+                <Image style={{ marginTop: -2 }} source={payWhite} />
+              </View>
+              <Text style={styles.actionText}>Transferir dinheiro</Text>
+            </View>
+            <View style={{ justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
+              <View style={styles.actionSphere}>
+                <Image style={{ marginTop: -2 }} source={moneyWhite} />
+              </View>
+              <Text style={styles.actionText}>Sacar dinheiro</Text>
+            </View>
+          </View>
+          <View style={styles.mainItem}>
+            <Text style={styles.normalCardText}>Use o dinheiro da sua conta para comprar pela internet com o Cartão Mercado Pago</Text>
+          </View>
+        </ScrollView>
+        <View style={styles.footer}>
+          <View style={styles.footerItem}>
+            <Feather name="home" color="#009EE3" size={20}/>
+            <Text style={{...styles.tabText, color: '#009EE3'}}>Início</Text>
+          </View>
+          <View style={styles.footerItem}>
+            <Image source={money} />
+            <Text style={styles.tabText}>Seu dinheiro</Text>
+          </View>
+          <View style={styles.footerItem}>
+            <Image source={pay} />
+            <Text style={styles.tabText}>Pagar</Text>
+          </View>
+          <View style={styles.footerItem}>
+            <Image source={chargeIcon} />
+            <Text style={styles.tabText}>Cobrar</Text>
+          </View>
+          <View style={styles.footerItem}>
+            <Feather name="home" color="#898989" size={20}/>
+            <Text style={styles.tabText}>Mais</Text>
+          </View>
         </View>
-        <View>
-
-        </View>
-      </SafeAreaView>
+      </View>
     </>
   );
 };
@@ -72,10 +126,9 @@ const styles = StyleSheet.create({
     width: Dimensions.get('window').width,
     justifyContent: 'center',
     alignItems: 'center',
-    position: 'absolute',
-    top: 0,
     paddingVertical: 22,
-    paddingHorizontal: 20
+    paddingHorizontal: 20,
+    zIndex: 20
   },
   topContent: {
     flexDirection: 'row',
@@ -135,6 +188,66 @@ const styles = StyleSheet.create({
     backgroundColor: '#1AADED',
     justifyContent: 'center',
     alignItems: 'center'
+  },
+  footer: {
+    width: Dimensions.get('window').width,
+    backgroundColor: '#FAFAFA',
+    height: 55,
+    borderTopColor: '#898989',
+    borderTopWidth: 0.5,
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    flexDirection: 'row',
+    zIndex: 20
+  },
+  footerItem: {
+    alignItems: 'center'
+  },
+  tabText: {
+    color: '#898989'
+  },
+  mainContainer: {
+    paddingHorizontal: 30,
+    width: Dimensions.get('window').width,
+    marginTop: -8,
+    zIndex: 10,
+    backgroundColor: '#EFEFEF',
+    position: 'relative',
+    paddingTop: 28,
+    paddingBottom: 10
+  },
+  mainItem: {
+    borderRadius: 3,
+    backgroundColor: '#FAFAFA',
+    width: '100%',
+    paddingHorizontal: 15,
+    paddingVertical: 10
+  },
+  normalCardText: {
+    color: '#424242',
+    fontSize: 13
+  },
+  actionsContainer: {
+    width: '100%',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    flexDirection: 'row',
+    marginBottom: 20
+  },
+  actionSphere: {
+    height: 50,
+    width: 50,
+    borderRadius: 25,
+    backgroundColor: '#009EE3',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  actionText: {
+    color: '#424242',
+    fontSize: 13,
+    maxWidth: 60,
+    marginTop: 5,
+    textAlign: 'center'
   }
 });
 
