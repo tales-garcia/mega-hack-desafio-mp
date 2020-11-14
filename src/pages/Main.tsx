@@ -17,9 +17,12 @@ import moneyWhite from '../../images/moneyWhite.png';
 import qrCode from '../../images/qr-code.png';
 import payWhite from '../../images/payWhite.png';
 import receive from '../../images/receive.png';
-import { ScrollView } from 'react-native-gesture-handler';
+import { RectButton, ScrollView } from 'react-native-gesture-handler';
+import { useNavigation } from '@react-navigation/native';
 
 const Main = () => {
+  const { navigate } = useNavigation();
+
   return (
     <>
       <StatusBar barStyle="light-content" />
@@ -63,9 +66,9 @@ const Main = () => {
         <ScrollView style={styles.mainContainer}>
           <View style={styles.actionsContainer}>
             <View style={{ justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
-              <View style={styles.actionSphere}>
+              <RectButton onPress={() => navigate('scan')} style={styles.actionSphere}>
                 <Image style={{ marginTop: -2 }} source={qrCode} />
-              </View>
+              </RectButton>
               <Text style={styles.actionText}>Código QR</Text>
             </View>
             <View style={{ justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
