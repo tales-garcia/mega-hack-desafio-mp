@@ -1,5 +1,5 @@
 import { Feather } from '@expo/vector-icons';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 import React, { useRef, useState, useEffect } from 'react';
 import { Dimensions, StyleSheet, Text, View } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
@@ -9,12 +9,14 @@ import * as Speech from 'expo-speech';
 function ScanQRCode() {
   const [flash, setFlash] = useState(false);
   const scanner = useRef<QRCodeScanner>(null);
+  const { accessibilityActivated } = useRoute().params as { accessibilityActivated: boolean };
 
   const { goBack, navigate } = useNavigation();
   scanner.current?.reactivate();
 
   useEffect(() => {
-    Speech.speak('Aponte a câmera para o código QR', { language: 'pt-BR' });
+    if(accessibilityActivated)
+      Speech.speak('Aponte a câmera para o código QR', { language: 'pt-BR' });
   }, []);
 
   function onRead(ev: Event) {
@@ -30,7 +32,8 @@ function ScanQRCode() {
 
     navigate('confirm', {
       title: parsedData[0],
-      price: parsedData[1]
+      price: parsedData[1],
+      accessibilityActivated
     });
   }
 

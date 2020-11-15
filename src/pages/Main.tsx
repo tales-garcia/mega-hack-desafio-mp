@@ -160,7 +160,7 @@ const Main = () => {
       return;
     }
     await Voice.cancel();
-    navigate('scan');
+    navigate('scan', { accessibilityActivated: true });
   }
 
   async function startSpeech() {
@@ -209,7 +209,7 @@ const Main = () => {
       <ScrollView style={styles.mainContainer}>
         <View style={styles.actionsContainer}>
           <View style={{ justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
-            <RectButton onPress={() => navigate('scan')} style={styles.actionSphere}>
+            <RectButton onPress={() => navigate('scan', { accessibilityActivated: false })} style={styles.actionSphere}>
               <Image style={{ marginTop: -2 }} source={qrCode} />
             </RectButton>
             <Text style={styles.actionText}>Código QR</Text>

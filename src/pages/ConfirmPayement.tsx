@@ -8,11 +8,12 @@ import LinearGradient from 'react-native-linear-gradient';
 import Voice, { SpeechResultsEvent } from '@react-native-community/voice';
 
 const ConfirmPayement = () => {
-  const { goBack } = useNavigation();
-  const params = useRoute().params as { title: string, price: number };
+  const { goBack, navigate } = useNavigation();
+  const params = useRoute().params as { title: string, price: number, accessibilityActivated: boolean };
 
   useEffect(() => {
-    askConfirmation();
+    if(params.accessibilityActivated)
+      askConfirmation();
   }, []);
 
   Voice.onSpeechResults = speechResults;
@@ -153,10 +154,14 @@ const ConfirmPayement = () => {
     }
 
     if (positive) {
-      alert('confirmado');
+      confirm();
     } else if (!positive) {
-      alert('negado');
+      navigate('main');
     }
+  }
+
+  function confirm() {
+    navigate('success', params);
   }
 
   return (
@@ -188,7 +193,7 @@ const ConfirmPayement = () => {
             <Text style={{ ...styles.normalText, fontSize: 16, letterSpacing: 2 }}>6/21</Text>
           </View>
         </LinearGradient>
-        <RectButton style={styles.payButton}><Text style={styles.payText}>Pagar</Text></RectButton>
+        <RectButton onPress={confirm} style={styles.payButton}><Text style={styles.payText}>Pagar</Text></RectButton>
       </View>
     </View>
   );

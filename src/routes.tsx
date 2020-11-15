@@ -5,6 +5,7 @@ import Main from './pages/Main';
 import ScanQRCode from './pages/ScanQRCode';
 import { Dimensions } from 'react-native';
 import ConfirmPayement from './pages/ConfirmPayement';
+import PaymentSucceed from './pages/PaymentSucceed';
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -21,6 +22,7 @@ export default function Routes () {
                 <Screen name="main" component={Main} />
                 <Screen name="scan" component={ScanQRCode} />
                 <Screen name="confirm" component={ConfirmPayement} />
+                <Screen name="success" component={PaymentSucceed} />
             </Navigator>
         </NavigationContainer>
     );
