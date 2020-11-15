@@ -5,6 +5,7 @@ import {
 } from 'react-native';
 import Routes from './routes';
 
+
 const App = () => {
   return (
     <>

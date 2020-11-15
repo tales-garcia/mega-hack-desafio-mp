@@ -19,9 +19,155 @@ import payWhite from '../../images/payWhite.png';
 import receive from '../../images/receive.png';
 import { RectButton, ScrollView } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
+import Voice, { SpeechResultsEvent } from '@react-native-community/voice';
 
 const Main = () => {
   const { navigate } = useNavigation();
+
+  Voice.onSpeechResults = onSpeechResult;
+
+  Voice.start('pt-BR')
+
+  let result = '';
+  let timeout: NodeJS.Timeout;
+  let speechFinished = false;
+
+  function onSpeechResult(e: SpeechResultsEvent) {
+    if (!e.value)
+      return;
+
+    e.value = e.value.map(string => string.toLowerCase());
+
+    if (result !== e.value.join(' ')) {
+      result = e.value.join(' ');
+    }
+    clearTimeout(timeout);
+    timeout = setTimeout(endSpeech, 1500);
+  }
+
+  async function endSpeech() {
+    if (speechFinished) {
+      return;
+    }
+
+    speechFinished = true;
+
+    handleResult(result);
+
+    await Voice.stop();
+    setTimeout(startSpeech, 3000);
+  }
+
+  function handleResult(result: string) {
+    const initialPossibleWords = [
+      'ler',
+      'pagar',
+      'abrir',
+      'anotar'
+    ];
+    const secondPossibleWords = [
+      'com',
+      'por',
+      'usando',
+      'via'
+    ];
+    const thirdPossibleWords = [
+      'código',
+      'qr'
+    ];
+    const finalPossibleWords = [
+      'qr',
+      'code',
+      'câmera'
+    ];
+
+    const splitted = result.split(' ');
+
+    const booleanGuessArray = splitted.reduce((total, word, index, self) => {
+      switch (index) {
+        case 0: {
+
+          if (initialPossibleWords.includes(word)) {
+            total[0] = true
+          }
+
+          break;
+        }
+        case 1: {
+
+          if(self.length === 2) {
+            if(finalPossibleWords.includes(word)) {
+              total[1] = true
+            }
+          } else if(self.length === 3) {
+            if(thirdPossibleWords.includes(word)) {
+              total[1] = true
+            }
+          }
+          else if(self.length === 4) {
+            if(secondPossibleWords.includes(word)) {
+              total[1] = true
+            }
+          }
+          break;
+        }
+        case 2: {
+
+          if(self.length === 3) {
+            if(finalPossibleWords.includes(word)) {
+              total[2] = true
+            }
+          }
+          else if(self.length === 4) {
+            if(thirdPossibleWords.includes(word)) {
+              total[2] = true
+            }
+          }
+
+          break;
+        }
+        case 3: {
+
+          if(finalPossibleWords.includes(word)) {
+            total[3] = true
+          }
+          break;
+        }
+      }
+      return total;
+    }, [false, false]);
+    const falses = booleanGuessArray.reduce((total, boolean) => {
+      if(!boolean) {
+        total++;
+      }
+      return total
+    }, 0);
+    if(falses === 4) {
+      return;
+    }
+    if(falses === 3 && booleanGuessArray.length === 3) {
+      return;
+    }
+    if(falses === 2 && booleanGuessArray.length === 2) {
+      return;
+    }
+    if(falses === 2 && booleanGuessArray.length === 3) {
+      return;
+    }
+    if(falses === 3 && booleanGuessArray.length === 4) {
+      return;
+    }
+    if(falses === 2 && booleanGuessArray.length === 4) {
+      return;
+    }
+
+    navigate('scan');
+  }
+
+  async function startSpeech() {
+    await Voice.start('pt-BR');
+    speechFinished = false;
+  }
 
   return (
     <>
@@ -31,34 +177,34 @@ const Main = () => {
           <View style={styles.topContent}>
             <View>
               <Text style={styles.smallText}>Olá Tales</Text>
-              <Text style={styles.mediumText}>Nível 30 - Mercado Pontos <FontAwesome size={12} name="chevron-right"/></Text>
+              <Text style={styles.mediumText}>Nível 30 - Mercado Pontos <FontAwesome size={12} name="chevron-right" /></Text>
             </View>
             <View>
               <Feather name="bell" color="#fff" size={25} />
             </View>
           </View>
           <View style={styles.headerMainContent}>
-            <View style={{...styles.headerItem, borderBottomColor: '#1AADED', borderBottomWidth: 1}}>
+            <View style={{ ...styles.headerItem, borderBottomColor: '#1AADED', borderBottomWidth: 1 }}>
               <Text style={styles.largeText}>R$ 0</Text>
-              <FontAwesome name="chevron-right" color="#fff" size={12}/>
+              <FontAwesome name="chevron-right" color="#fff" size={12} />
             </View>
-            <View style={{...styles.headerItem, borderBottomColor: '#1AADED', borderBottomWidth: 1}}>
+            <View style={{ ...styles.headerItem, borderBottomColor: '#1AADED', borderBottomWidth: 1 }}>
               <View style={styles.itemText}>
                 <Image source={statisticsIcon} style={{ marginRight: 10 }} />
-                <Text style={{...styles.smallText, maxWidth: 156}}>Ganhe mais do que com a poupança</Text>
+                <Text style={{ ...styles.smallText, maxWidth: 156 }}>Ganhe mais do que com a poupança</Text>
               </View>
-              <FontAwesome name="chevron-right" color="#fff" size={12}/>
+              <FontAwesome name="chevron-right" color="#fff" size={12} />
             </View>
             <View style={styles.headerItem}>
-              <LinearGradient start={{x: 0, y: 0}} end={{x: 1, y: 0}} colors={['#0030AC', '#005BEB']} style={styles.card}>
+              <LinearGradient start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} colors={['#0030AC', '#005BEB']} style={styles.card}>
                 <Text style={styles.smallText}>Visa</Text>
                 <Text style={styles.cardNumber}>**** **** **** 0000</Text>
               </LinearGradient>
-              <FontAwesome name="chevron-right" color="#fff" size={12}/>
+              <FontAwesome name="chevron-right" color="#fff" size={12} />
             </View>
             <View style={styles.headerArrowUpContainer}>
               <View style={styles.arrowUpSphere}>
-                <FontAwesome style={{ marginTop: -2 }} name="chevron-up" color="#fff" size={10}/>
+                <FontAwesome style={{ marginTop: -2 }} name="chevron-up" color="#fff" size={10} />
               </View>
             </View>
           </View>
@@ -96,8 +242,8 @@ const Main = () => {
         </ScrollView>
         <View style={styles.footer}>
           <View style={styles.footerItem}>
-            <Feather name="home" color="#009EE3" size={20}/>
-            <Text style={{...styles.tabText, color: '#009EE3'}}>Início</Text>
+            <Feather name="home" color="#009EE3" size={20} />
+            <Text style={{ ...styles.tabText, color: '#009EE3' }}>Início</Text>
           </View>
           <View style={styles.footerItem}>
             <Image source={money} />
@@ -112,7 +258,7 @@ const Main = () => {
             <Text style={styles.tabText}>Cobrar</Text>
           </View>
           <View style={styles.footerItem}>
-            <Feather name="home" color="#898989" size={20}/>
+            <Feather name="home" color="#898989" size={20} />
             <Text style={styles.tabText}>Mais</Text>
           </View>
         </View>
