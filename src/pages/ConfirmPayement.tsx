@@ -1,5 +1,5 @@
 import { Feather } from '@expo/vector-icons';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 import React from 'react';
 import { Dimensions, StyleSheet, Text, View } from 'react-native';
 import { RectButton, ScrollView } from 'react-native-gesture-handler';
@@ -7,6 +7,7 @@ import LinearGradient from 'react-native-linear-gradient';
 
 const ConfirmPayement = () => {
   const { goBack } = useNavigation();
+  const params = useRoute().params as { title: string, price: number };
 
   return (
     <View style={styles.container}>
@@ -18,11 +19,11 @@ const ConfirmPayement = () => {
           <View style={styles.roundedView}>
             <Feather name="shopping-bag" color="#009EE3" size={35} />
           </View>
-          <Text style={{...styles.boldText, fontSize: 22, marginTop: 5}}>Teste</Text>
+          <Text style={{ ...styles.boldText, fontSize: 22, marginTop: 5 }}>{params.title}</Text>
         </View>
         <View style={styles.bottomContent}>
           <Text style={styles.normalText}>Total a pagar</Text>
-          <Text style={styles.boldText}>R$ 5</Text>
+          <Text style={styles.boldText}>R$ { params.price }</Text>
         </View>
       </View>
       <View style={styles.mainContainer}>
@@ -33,8 +34,8 @@ const ConfirmPayement = () => {
           <Text style={styles.visa}>Visa</Text>
           <Text style={styles.cardNumber}>**** **** **** 0000</Text>
           <View style={styles.ownerInfo}>
-            <Text style={{...styles.normalText, fontSize: 16, letterSpacing: 2}}>TALES P GARCIA</Text>
-            <Text style={{...styles.normalText, fontSize: 16, letterSpacing: 2}}>6/21</Text>
+            <Text style={{ ...styles.normalText, fontSize: 16, letterSpacing: 2 }}>TALES P GARCIA</Text>
+            <Text style={{ ...styles.normalText, fontSize: 16, letterSpacing: 2 }}>6/21</Text>
           </View>
         </LinearGradient>
         <RectButton style={styles.payButton}><Text style={styles.payText}>Pagar</Text></RectButton>
@@ -95,7 +96,7 @@ const styles = StyleSheet.create({
     width: 60,
     borderRadius: 30,
     backgroundColor: '#FAFAFA',
-    justifyContent: 'center', 
+    justifyContent: 'center',
     alignItems: 'center'
   },
   mainContainer: {

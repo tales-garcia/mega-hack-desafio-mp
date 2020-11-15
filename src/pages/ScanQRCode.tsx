@@ -1,18 +1,30 @@
 import { Feather } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Dimensions, StyleSheet, Text, View } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
 import QRCodeScanner, { Event } from 'react-native-qrcode-scanner';
 
 function ScanQRCode() {
   const [flash, setFlash] = useState(false);
+  const scanner = useRef<QRCodeScanner>(null);
 
   const { goBack, navigate } = useNavigation();
 
   function onRead(ev: Event) {
-    alert(ev.data);
-    navigate('confirm');
+
+    const parsedData = ev.data.split(':');
+    if(parsedData.length > 2 || parsedData.length < 2) {
+      alert('O código QR escaneado não é válido');
+      return;
+    }
+
+    parsedData[1] = parsedData[1]*1;
+
+    navigate('confirm', {
+      title: parsedData[0],
+      price: parsedData[1]
+    });
   }
 
   return (
@@ -23,8 +35,11 @@ function ScanQRCode() {
         <Feather color="#fff" size={25} name="help-circle" />
       </View>
       <QRCodeScanner
+        ref={scanner}
+        reactivate={true}
+        reactivateTimeout={5000}
         onRead={onRead}
-        cameraProps={{flashMode: flash ? 'on' : 'off'}}
+        cameraProps={{flashMode: flash ? 'torch' : 'off'}}
         cameraStyle={styles.camera}
         bottomContent={(
           <View style={styles.bottomContainer}>
