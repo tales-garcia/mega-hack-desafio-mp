@@ -1,13 +1,163 @@
 import { Feather } from '@expo/vector-icons';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Dimensions, StyleSheet, Text, View } from 'react-native';
-import { RectButton, ScrollView } from 'react-native-gesture-handler';
+import { RectButton } from 'react-native-gesture-handler';
+import * as Speech from 'expo-speech';
 import LinearGradient from 'react-native-linear-gradient';
+import Voice, { SpeechResultsEvent } from '@react-native-community/voice';
 
 const ConfirmPayement = () => {
   const { goBack } = useNavigation();
   const params = useRoute().params as { title: string, price: number };
+
+  useEffect(() => {
+    askConfirmation();
+  }, []);
+
+  Voice.onSpeechResults = speechResults;
+  let result = '';
+  let timeout: NodeJS.Timeout;
+  let speechFinished = false;
+
+  function speechResults(e: SpeechResultsEvent) {
+    if (!e.value)
+      return;
+
+    e.value = e.value.map(string => string.toLowerCase());
+
+    if (result !== e.value.join(' ')) {
+      result = e.value.join(' ');
+    }
+
+    clearTimeout(timeout);
+    timeout = setTimeout(endSpeech, 1500);
+  }
+
+  async function askConfirmation() {
+    Speech.speak(`Você confirma o pagamento de ${params.price} reais para ${params.title}?`, {
+      language: 'pt-BR'
+    });
+    setTimeout(startSpeech, 5000);
+  }
+
+  async function endSpeech() {
+    if (speechFinished) {
+      return;
+    }
+
+    speechFinished = true;
+
+    handleResult(result);
+
+    await Voice.stop();
+    setTimeout(startSpeech, 3000);
+  }
+
+  async function startSpeech() {
+    speechFinished = false;
+
+    await Voice.destroy().then(Voice.removeAllListeners).catch(e => {
+      setTimeout(startSpeech, 3000);
+    });
+    if(await Voice.isAvailable()) {
+      await Voice.start('pt-BR');
+    }
+  }
+
+  function handleResult(result: string) {
+    const possiblePositiveAnwsers = [
+      'sim',
+      'confirmar',
+      'aceitar',
+      'pagar',
+      'continuar'
+    ]
+    const possibleNegativeAwnsers = [
+      'negar',
+      'não',
+      'cancelar'
+    ]
+
+    const words = result.split(' ');
+
+    const booleanGuessArray = words.reduce((total, word, index, self) => {
+
+      if (index === 0) {
+        if (self.length === 2) {
+          if (possiblePositiveAnwsers.includes(word)) {
+            total[0][0] = true;
+          } else if (possibleNegativeAwnsers.includes(word)) {
+            total[1][0] = true;
+          }
+        } else {
+          if (possiblePositiveAnwsers.includes(word)) {
+            total[0][0] = true;
+            total[0][1] = true;
+          } else if (possibleNegativeAwnsers.includes(word)) {
+            total[1][0] = true;
+            total[1][1] = true;
+          }
+        }
+      } else if (index === 1) {
+        if (possiblePositiveAnwsers.includes(word)) {
+          total[0][1] = true;
+        } else if (possibleNegativeAwnsers.includes(word)) {
+          total[1][1] = true;
+        }
+      }
+
+      return total;
+    }, [[false, false], [false, false]]);
+
+    const negativeFalses = booleanGuessArray[1].reduce((total, boolean) => {
+      if (!boolean) {
+        total++;
+      }
+
+      return total;
+    }, 0);
+
+    const positiveFalses = booleanGuessArray[0].reduce((total, boolean) => {
+      if (!boolean) {
+        total++;
+      }
+
+      return total;
+    }, 0);
+
+    let positive = false;
+    let unknownWord = false;
+
+    if (positiveFalses === 2 && negativeFalses === 2) {
+      unknownWord = true;
+    }
+    if (positiveFalses === 1 && booleanGuessArray[0].length === 1 && negativeFalses === 1 && booleanGuessArray[1].length === 1) {
+      unknownWord = true;
+    }
+    if (positiveFalses === 2 && negativeFalses === 0) {
+      positive = false;
+    }
+    if (positiveFalses === 0 && negativeFalses === 2) {
+      positive = true;
+    }
+    if (positiveFalses === 0 && negativeFalses === 1) {
+      positive = true;
+    }
+    if (positiveFalses === 1 && negativeFalses === 0) {
+      positive = false;
+    }
+
+    if (unknownWord) {
+      return;
+    }
+
+    if (positive) {
+      alert('confirmado');
+    } else if (!positive) {
+      alert('negado');
+    }
+  }
 
   return (
     <View style={styles.container}>
@@ -23,7 +173,7 @@ const ConfirmPayement = () => {
         </View>
         <View style={styles.bottomContent}>
           <Text style={styles.normalText}>Total a pagar</Text>
-          <Text style={styles.boldText}>R$ { params.price }</Text>
+          <Text style={styles.boldText}>R$ {params.price}</Text>
         </View>
       </View>
       <View style={styles.mainContainer}>

@@ -1,25 +1,32 @@
 import { Feather } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Dimensions, StyleSheet, Text, View } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
 import QRCodeScanner, { Event } from 'react-native-qrcode-scanner';
+import * as Speech from 'expo-speech';
 
 function ScanQRCode() {
   const [flash, setFlash] = useState(false);
   const scanner = useRef<QRCodeScanner>(null);
 
   const { goBack, navigate } = useNavigation();
+  scanner.current?.reactivate();
+
+  useEffect(() => {
+    Speech.speak('Aponte a câmera para o código QR', { language: 'pt-BR' });
+  }, []);
 
   function onRead(ev: Event) {
 
     const parsedData = ev.data.split(':');
-    if(parsedData.length > 2 || parsedData.length < 2) {
+    if (parsedData.length > 2 || parsedData.length < 2) {
       alert('O código QR escaneado não é válido');
       return;
     }
 
-    parsedData[1] = parsedData[1]*1;
+    parsedData[1] = parsedData[1].replace('.', ',');
+    scanner.current?.disable();
 
     navigate('confirm', {
       title: parsedData[0],
@@ -39,7 +46,7 @@ function ScanQRCode() {
         reactivate={true}
         reactivateTimeout={5000}
         onRead={onRead}
-        cameraProps={{flashMode: flash ? 'torch' : 'off'}}
+        cameraProps={{ flashMode: flash ? 'torch' : 'off' }}
         cameraStyle={styles.camera}
         bottomContent={(
           <View style={styles.bottomContainer}>

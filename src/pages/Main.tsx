@@ -4,7 +4,6 @@ import LinearGradient from 'react-native-linear-gradient';
 import {
   Dimensions,
   Image,
-  StatusBar,
   StyleSheet,
   Text,
   View,
@@ -58,7 +57,7 @@ const Main = () => {
     setTimeout(startSpeech, 3000);
   }
 
-  function handleResult(result: string) {
+  async function handleResult(result: string) {
     const initialPossibleWords = [
       'ler',
       'pagar',
@@ -160,7 +159,7 @@ const Main = () => {
     if (falses === 2 && booleanGuessArray.length === 4) {
       return;
     }
-
+    await Voice.cancel();
     navigate('scan');
   }
 
