@@ -11,6 +11,8 @@ target 'megahackdesafiomp' do
   permissions_path = '../node_modules/react-native-permissions/ios'
 
   pod 'Permission-Camera', :path => "#{permissions_path}/Camera.podspec"
+  pod 'Permission-SpeechRecognition', :path => "#{permissions_path}/SpeechRecognition.podspec"
+  pod 'Permission-Microphone', :path => "#{permissions_path}/Microphone.podspec"
 
   use_react_native!(:path => config["reactNativePath"])
 

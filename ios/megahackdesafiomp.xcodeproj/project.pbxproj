@@ -12,12 +12,104 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */; };
-		96905EF65AED1B983A6B3ABC /* libPods-megahackdesafiomp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58EEBF8E8E6FB1BC6CAF49B5 /* libPods-megahackdesafiomp.a */; };
+		73F40DE2A9DD71FD4724C51D /* libPods-megahackdesafiomp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CB3AD29D7D3286DD97E4D96 /* libPods-megahackdesafiomp.a */; };
 		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
+		05C858C4256050CB008EC972 /* BVLinearGradient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BVLinearGradient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C858C6256050CB008EC972 /* CoreModules.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CoreModules.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C858C8256050CB008EC972 /* cxxreact.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = cxxreact.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C858CA256050CB008EC972 /* DoubleConversion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DoubleConversion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C858CC256050CB008EC972 /* EXConstants.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EXConstants.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C858CE256050CB008EC972 /* EXErrorRecovery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EXErrorRecovery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C858D0256050CB008EC972 /* EXFileSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EXFileSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C858D2256050CB008EC972 /* EXFont.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EXFont.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C858D4256050CB008EC972 /* EXImageLoader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EXImageLoader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C858D6256050CB008EC972 /* EXKeepAwake.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EXKeepAwake.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C858D8256050CB008EC972 /* EXLinearGradient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EXLinearGradient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C858DA256050CB008EC972 /* EXLocation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EXLocation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C858DC256050CB008EC972 /* EXPermissions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EXPermissions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C858DE256050CB008EC972 /* EXSplashScreen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EXSplashScreen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C858E0256050CB008EC972 /* EXSQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EXSQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C858E2256050CB008EC972 /* EXUpdates.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EXUpdates.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C858E4256050CB008EC972 /* FBReactNativeSpec.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBReactNativeSpec.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C858E6256050CB008EC972 /* folly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = folly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C858E8256050CB008EC972 /* glog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = glog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C858EA256050CB008EC972 /* jsi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = jsi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C858EC256050CB008EC972 /* jsinspector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = jsinspector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C858EE256050CB008EC972 /* jsireact.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = jsireact.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C858F0256050CB008EC972 /* Permission_Camera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Permission_Camera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C858F4256050CB008EC972 /* RCTAnimation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RCTAnimation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C858F6256050CB008EC972 /* RCTBlob.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RCTBlob.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C858F8256050CB008EC972 /* RCTImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RCTImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C858FA256050CB008EC972 /* RCTLinking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RCTLinking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C858FC256050CB008EC972 /* RCTNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RCTNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C858FE256050CB008EC972 /* RCTSettings.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RCTSettings.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85900256050CB008EC972 /* RCTText.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RCTText.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85902256050CB008EC972 /* RCTTypeSafety.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RCTTypeSafety.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85904256050CB008EC972 /* RCTVibration.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RCTVibration.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85906256050CB008EC972 /* react_native_camera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = react_native_camera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85908256050CB008EC972 /* react_native_safe_area_context.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = react_native_safe_area_context.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C8590A256050CB008EC972 /* React.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = React.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C8590C256050CB008EC972 /* ReactCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ReactCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C8590E256050CB008EC972 /* RNCMaskedView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RNCMaskedView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85910256050CB008EC972 /* RNGestureHandler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RNGestureHandler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85912256050CB008EC972 /* RNPermissions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RNPermissions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85914256050CB008EC972 /* RNReanimated.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RNReanimated.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85916256050CB008EC972 /* RNScreens.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RNScreens.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C8591A256050CB008EC972 /* UMAppLoader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UMAppLoader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C8591C256050CB008EC972 /* UMCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UMCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C8591E256050CB008EC972 /* UMPermissionsInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UMPermissionsInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85920256050CB008EC972 /* UMReactNativeAdapter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UMReactNativeAdapter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85922256050CB008EC972 /* yoga.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = yoga.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85A93256066A4008EC972 /* BVLinearGradient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BVLinearGradient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85A95256066A4008EC972 /* CoreModules.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CoreModules.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85A97256066A4008EC972 /* cxxreact.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = cxxreact.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85A99256066A4008EC972 /* DoubleConversion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DoubleConversion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85A9B256066A4008EC972 /* EXConstants.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EXConstants.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85A9D256066A4008EC972 /* EXErrorRecovery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EXErrorRecovery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85A9F256066A4008EC972 /* EXFileSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EXFileSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85AA1256066A4008EC972 /* EXFont.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EXFont.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85AA3256066A4008EC972 /* EXImageLoader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EXImageLoader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85AA5256066A4008EC972 /* EXKeepAwake.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EXKeepAwake.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85AA7256066A4008EC972 /* EXLinearGradient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EXLinearGradient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85AA9256066A4008EC972 /* EXLocation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EXLocation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85AAB256066A5008EC972 /* EXPermissions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EXPermissions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85AAD256066A5008EC972 /* EXSplashScreen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EXSplashScreen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85AAF256066A5008EC972 /* EXSQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EXSQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85AB1256066A5008EC972 /* EXUpdates.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EXUpdates.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85AB3256066A5008EC972 /* FBReactNativeSpec.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBReactNativeSpec.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85AB5256066A5008EC972 /* folly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = folly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85AB7256066A5008EC972 /* glog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = glog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85AB9256066A5008EC972 /* jsi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = jsi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85ABB256066A5008EC972 /* jsinspector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = jsinspector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85ABD256066A5008EC972 /* jsireact.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = jsireact.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85ABF256066A5008EC972 /* Permission_Camera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Permission_Camera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85AC3256066A5008EC972 /* RCTAnimation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RCTAnimation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85AC5256066A5008EC972 /* RCTBlob.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RCTBlob.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85AC7256066A5008EC972 /* RCTImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RCTImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85AC9256066A5008EC972 /* RCTLinking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RCTLinking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85ACB256066A5008EC972 /* RCTNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RCTNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85ACD256066A5008EC972 /* RCTSettings.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RCTSettings.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85ACF256066A5008EC972 /* RCTText.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RCTText.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85AD1256066A5008EC972 /* RCTTypeSafety.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RCTTypeSafety.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85AD3256066A5008EC972 /* RCTVibration.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RCTVibration.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85AD5256066A5008EC972 /* react_native_camera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = react_native_camera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85AD7256066A5008EC972 /* react_native_safe_area_context.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = react_native_safe_area_context.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85AD9256066A5008EC972 /* React.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = React.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85ADB256066A5008EC972 /* ReactCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ReactCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85ADD256066A5008EC972 /* RNCMaskedView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RNCMaskedView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85ADF256066A5008EC972 /* RNGestureHandler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RNGestureHandler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85AE1256066A5008EC972 /* RNPermissions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RNPermissions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85AE3256066A5008EC972 /* RNReanimated.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RNReanimated.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85AE5256066A5008EC972 /* RNScreens.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RNScreens.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85AE9256066A5008EC972 /* UMAppLoader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UMAppLoader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85AEB256066A5008EC972 /* UMCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UMCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85AED256066A5008EC972 /* UMPermissionsInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UMPermissionsInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85AEF256066A5008EC972 /* UMReactNativeAdapter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UMReactNativeAdapter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C85AF1256066A5008EC972 /* yoga.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = yoga.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07F961A680F5B00A75B9A /* 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = megahackdesafiomp/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = megahackdesafiomp/AppDelegate.m; sourceTree = "<group>"; };
@@ -25,9 +117,9 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = megahackdesafiomp/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = megahackdesafiomp/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = megahackdesafiomp/main.m; sourceTree = "<group>"; };
-		58EEBF8E8E6FB1BC6CAF49B5 /* libPods-megahackdesafiomp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-megahackdesafiomp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C2E3173556A471DD304B334 /* Pods-megahackdesafiomp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-megahackdesafiomp.debug.xcconfig"; path = "Target Support Files/Pods-megahackdesafiomp/Pods-megahackdesafiomp.debug.xcconfig"; sourceTree = "<group>"; };
 		7A4D352CD337FB3A3BF06240 /* Pods-megahackdesafiomp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-megahackdesafiomp.release.xcconfig"; path = "Target Support Files/Pods-megahackdesafiomp/Pods-megahackdesafiomp.release.xcconfig"; sourceTree = "<group>"; };
+		8CB3AD29D7D3286DD97E4D96 /* libPods-megahackdesafiomp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-megahackdesafiomp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = megahackdesafiomp/SplashScreen.storyboard; sourceTree = "<group>"; };
 		BB2F792C24A3F905000567C9 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Expo.plist; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -39,7 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96905EF65AED1B983A6B3ABC /* libPods-megahackdesafiomp.a in Frameworks */,
+				73F40DE2A9DD71FD4724C51D /* libPods-megahackdesafiomp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,9 +157,101 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				05C85A93256066A4008EC972 /* BVLinearGradient.framework */,
+				05C85A95256066A4008EC972 /* CoreModules.framework */,
+				05C85A97256066A4008EC972 /* cxxreact.framework */,
+				05C85A99256066A4008EC972 /* DoubleConversion.framework */,
+				05C85A9B256066A4008EC972 /* EXConstants.framework */,
+				05C85A9D256066A4008EC972 /* EXErrorRecovery.framework */,
+				05C85A9F256066A4008EC972 /* EXFileSystem.framework */,
+				05C85AA1256066A4008EC972 /* EXFont.framework */,
+				05C85AA3256066A4008EC972 /* EXImageLoader.framework */,
+				05C85AA5256066A4008EC972 /* EXKeepAwake.framework */,
+				05C85AA7256066A4008EC972 /* EXLinearGradient.framework */,
+				05C85AA9256066A4008EC972 /* EXLocation.framework */,
+				05C85AAB256066A5008EC972 /* EXPermissions.framework */,
+				05C85AAD256066A5008EC972 /* EXSplashScreen.framework */,
+				05C85AAF256066A5008EC972 /* EXSQLite.framework */,
+				05C85AB1256066A5008EC972 /* EXUpdates.framework */,
+				05C85AB3256066A5008EC972 /* FBReactNativeSpec.framework */,
+				05C85AB5256066A5008EC972 /* folly.framework */,
+				05C85AB7256066A5008EC972 /* glog.framework */,
+				05C85AB9256066A5008EC972 /* jsi.framework */,
+				05C85ABB256066A5008EC972 /* jsinspector.framework */,
+				05C85ABD256066A5008EC972 /* jsireact.framework */,
+				05C85ABF256066A5008EC972 /* Permission_Camera.framework */,
+				05C85AC3256066A5008EC972 /* RCTAnimation.framework */,
+				05C85AC5256066A5008EC972 /* RCTBlob.framework */,
+				05C85AC7256066A5008EC972 /* RCTImage.framework */,
+				05C85AC9256066A5008EC972 /* RCTLinking.framework */,
+				05C85ACB256066A5008EC972 /* RCTNetwork.framework */,
+				05C85ACD256066A5008EC972 /* RCTSettings.framework */,
+				05C85ACF256066A5008EC972 /* RCTText.framework */,
+				05C85AD1256066A5008EC972 /* RCTTypeSafety.framework */,
+				05C85AD3256066A5008EC972 /* RCTVibration.framework */,
+				05C85AD5256066A5008EC972 /* react_native_camera.framework */,
+				05C85AD7256066A5008EC972 /* react_native_safe_area_context.framework */,
+				05C85AD9256066A5008EC972 /* React.framework */,
+				05C85ADB256066A5008EC972 /* ReactCommon.framework */,
+				05C85ADD256066A5008EC972 /* RNCMaskedView.framework */,
+				05C85ADF256066A5008EC972 /* RNGestureHandler.framework */,
+				05C85AE1256066A5008EC972 /* RNPermissions.framework */,
+				05C85AE3256066A5008EC972 /* RNReanimated.framework */,
+				05C85AE5256066A5008EC972 /* RNScreens.framework */,
+				05C85AE9256066A5008EC972 /* UMAppLoader.framework */,
+				05C85AEB256066A5008EC972 /* UMCore.framework */,
+				05C85AED256066A5008EC972 /* UMPermissionsInterface.framework */,
+				05C85AEF256066A5008EC972 /* UMReactNativeAdapter.framework */,
+				05C85AF1256066A5008EC972 /* yoga.framework */,
+				05C858C4256050CB008EC972 /* BVLinearGradient.framework */,
+				05C858C6256050CB008EC972 /* CoreModules.framework */,
+				05C858C8256050CB008EC972 /* cxxreact.framework */,
+				05C858CA256050CB008EC972 /* DoubleConversion.framework */,
+				05C858CC256050CB008EC972 /* EXConstants.framework */,
+				05C858CE256050CB008EC972 /* EXErrorRecovery.framework */,
+				05C858D0256050CB008EC972 /* EXFileSystem.framework */,
+				05C858D2256050CB008EC972 /* EXFont.framework */,
+				05C858D4256050CB008EC972 /* EXImageLoader.framework */,
+				05C858D6256050CB008EC972 /* EXKeepAwake.framework */,
+				05C858D8256050CB008EC972 /* EXLinearGradient.framework */,
+				05C858DA256050CB008EC972 /* EXLocation.framework */,
+				05C858DC256050CB008EC972 /* EXPermissions.framework */,
+				05C858DE256050CB008EC972 /* EXSplashScreen.framework */,
+				05C858E0256050CB008EC972 /* EXSQLite.framework */,
+				05C858E2256050CB008EC972 /* EXUpdates.framework */,
+				05C858E4256050CB008EC972 /* FBReactNativeSpec.framework */,
+				05C858E6256050CB008EC972 /* folly.framework */,
+				05C858E8256050CB008EC972 /* glog.framework */,
+				05C858EA256050CB008EC972 /* jsi.framework */,
+				05C858EC256050CB008EC972 /* jsinspector.framework */,
+				05C858EE256050CB008EC972 /* jsireact.framework */,
+				05C858F0256050CB008EC972 /* Permission_Camera.framework */,
+				05C858F4256050CB008EC972 /* RCTAnimation.framework */,
+				05C858F6256050CB008EC972 /* RCTBlob.framework */,
+				05C858F8256050CB008EC972 /* RCTImage.framework */,
+				05C858FA256050CB008EC972 /* RCTLinking.framework */,
+				05C858FC256050CB008EC972 /* RCTNetwork.framework */,
+				05C858FE256050CB008EC972 /* RCTSettings.framework */,
+				05C85900256050CB008EC972 /* RCTText.framework */,
+				05C85902256050CB008EC972 /* RCTTypeSafety.framework */,
+				05C85904256050CB008EC972 /* RCTVibration.framework */,
+				05C85906256050CB008EC972 /* react_native_camera.framework */,
+				05C85908256050CB008EC972 /* react_native_safe_area_context.framework */,
+				05C8590A256050CB008EC972 /* React.framework */,
+				05C8590C256050CB008EC972 /* ReactCommon.framework */,
+				05C8590E256050CB008EC972 /* RNCMaskedView.framework */,
+				05C85910256050CB008EC972 /* RNGestureHandler.framework */,
+				05C85912256050CB008EC972 /* RNPermissions.framework */,
+				05C85914256050CB008EC972 /* RNReanimated.framework */,
+				05C85916256050CB008EC972 /* RNScreens.framework */,
+				05C8591A256050CB008EC972 /* UMAppLoader.framework */,
+				05C8591C256050CB008EC972 /* UMCore.framework */,
+				05C8591E256050CB008EC972 /* UMPermissionsInterface.framework */,
+				05C85920256050CB008EC972 /* UMReactNativeAdapter.framework */,
+				05C85922256050CB008EC972 /* yoga.framework */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				58EEBF8E8E6FB1BC6CAF49B5 /* libPods-megahackdesafiomp.a */,
+				8CB3AD29D7D3286DD97E4D96 /* libPods-megahackdesafiomp.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -132,7 +316,7 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				800E24972A6A228C8D4807E9 /* [CP] Copy Pods Resources */,
+				99DD324BA860661BF3DFE34B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -226,7 +410,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		800E24972A6A228C8D4807E9 /* [CP] Copy Pods Resources */ = {
+		99DD324BA860661BF3DFE34B /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -296,6 +480,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2G99C9SA4T;
 				ENABLE_BITCODE = NO;
@@ -308,14 +493,15 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
-					"$(inherited)",
 					"-ObjC",
 					"-lc++",
+					"${inherited}",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.mercado.pago.mega.hack.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.mercado.pago.mega.hack.Mercado-Pago";
 				PRODUCT_NAME = 2;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -326,6 +512,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2G99C9SA4T;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
@@ -333,13 +520,14 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
-					"$(inherited)",
 					"-ObjC",
 					"-lc++",
+					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.mercado.pago.mega.hack.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.mercado.pago.mega.hack.Mercado-Pago";
 				PRODUCT_NAME = 2;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
