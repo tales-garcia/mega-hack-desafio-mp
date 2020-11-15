@@ -8,10 +8,11 @@ import QRCodeScanner, { Event } from 'react-native-qrcode-scanner';
 function ScanQRCode() {
   const [flash, setFlash] = useState(false);
 
-  const { goBack } = useNavigation();
+  const { goBack, navigate } = useNavigation();
 
   function onRead(ev: Event) {
     alert(ev.data);
+    navigate('confirm');
   }
 
   return (

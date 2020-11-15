@@ -63,7 +63,7 @@ const Main = () => {
       'ler',
       'pagar',
       'abrir',
-      'anotar'
+      'escanear'
     ];
     const secondPossibleWords = [
       'com',
@@ -194,7 +194,7 @@ const Main = () => {
             <FontAwesome name="chevron-right" color="#fff" size={12} />
           </View>
           <View style={styles.headerItem}>
-            <LinearGradient start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} colors={['#0030AC', '#005BEB']} style={styles.card}>
+            <LinearGradient start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} colors={['#0030AC', '#1a6ced']} style={styles.card}>
               <Text style={styles.smallText}>Visa</Text>
               <Text style={styles.cardNumber}>**** **** **** 0000</Text>
             </LinearGradient>
