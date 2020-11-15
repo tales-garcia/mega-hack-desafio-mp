@@ -95,17 +95,17 @@ const Main = () => {
         }
         case 1: {
 
-          if(self.length === 2) {
-            if(finalPossibleWords.includes(word)) {
+          if (self.length === 2) {
+            if (finalPossibleWords.includes(word)) {
               total[1] = true
             }
-          } else if(self.length === 3) {
-            if(thirdPossibleWords.includes(word)) {
+          } else if (self.length === 3) {
+            if (thirdPossibleWords.includes(word)) {
               total[1] = true
             }
           }
-          else if(self.length === 4) {
-            if(secondPossibleWords.includes(word)) {
+          else if (self.length === 4) {
+            if (secondPossibleWords.includes(word)) {
               total[1] = true
             }
           }
@@ -113,13 +113,13 @@ const Main = () => {
         }
         case 2: {
 
-          if(self.length === 3) {
-            if(finalPossibleWords.includes(word)) {
+          if (self.length === 3) {
+            if (finalPossibleWords.includes(word)) {
               total[2] = true
             }
           }
-          else if(self.length === 4) {
-            if(thirdPossibleWords.includes(word)) {
+          else if (self.length === 4) {
+            if (thirdPossibleWords.includes(word)) {
               total[2] = true
             }
           }
@@ -128,7 +128,7 @@ const Main = () => {
         }
         case 3: {
 
-          if(finalPossibleWords.includes(word)) {
+          if (finalPossibleWords.includes(word)) {
             total[3] = true
           }
           break;
@@ -137,27 +137,27 @@ const Main = () => {
       return total;
     }, [false, false]);
     const falses = booleanGuessArray.reduce((total, boolean) => {
-      if(!boolean) {
+      if (!boolean) {
         total++;
       }
       return total
     }, 0);
-    if(falses === 4) {
+    if (falses === 4) {
       return;
     }
-    if(falses === 3 && booleanGuessArray.length === 3) {
+    if (falses === 3 && booleanGuessArray.length === 3) {
       return;
     }
-    if(falses === 2 && booleanGuessArray.length === 2) {
+    if (falses === 2 && booleanGuessArray.length === 2) {
       return;
     }
-    if(falses === 2 && booleanGuessArray.length === 3) {
+    if (falses === 2 && booleanGuessArray.length === 3) {
       return;
     }
-    if(falses === 3 && booleanGuessArray.length === 4) {
+    if (falses === 3 && booleanGuessArray.length === 4) {
       return;
     }
-    if(falses === 2 && booleanGuessArray.length === 4) {
+    if (falses === 2 && booleanGuessArray.length === 4) {
       return;
     }
 
@@ -170,100 +170,97 @@ const Main = () => {
   }
 
   return (
-    <>
-      <StatusBar barStyle="light-content" />
-      <View style={{ height: Dimensions.get('window').height, width: Dimensions.get('window').width, position: 'relative' }}>
-        <View style={styles.header}>
-          <View style={styles.topContent}>
-            <View>
-              <Text style={styles.smallText}>Olá Tales</Text>
-              <Text style={styles.mediumText}>Nível 30 - Mercado Pontos <FontAwesome size={12} name="chevron-right" /></Text>
-            </View>
-            <View>
-              <Feather name="bell" color="#fff" size={25} />
-            </View>
+    <View style={{ height: Dimensions.get('window').height, width: Dimensions.get('window').width, position: 'relative' }}>
+      <View style={styles.header}>
+        <View style={styles.topContent}>
+          <View>
+            <Text style={styles.smallText}>Olá Tales</Text>
+            <Text style={styles.mediumText}>Nível 30 - Mercado Pontos <FontAwesome size={12} name="chevron-right" /></Text>
           </View>
-          <View style={styles.headerMainContent}>
-            <View style={{ ...styles.headerItem, borderBottomColor: '#1AADED', borderBottomWidth: 1 }}>
-              <Text style={styles.largeText}>R$ 0</Text>
-              <FontAwesome name="chevron-right" color="#fff" size={12} />
-            </View>
-            <View style={{ ...styles.headerItem, borderBottomColor: '#1AADED', borderBottomWidth: 1 }}>
-              <View style={styles.itemText}>
-                <Image source={statisticsIcon} style={{ marginRight: 10 }} />
-                <Text style={{ ...styles.smallText, maxWidth: 156 }}>Ganhe mais do que com a poupança</Text>
-              </View>
-              <FontAwesome name="chevron-right" color="#fff" size={12} />
-            </View>
-            <View style={styles.headerItem}>
-              <LinearGradient start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} colors={['#0030AC', '#005BEB']} style={styles.card}>
-                <Text style={styles.smallText}>Visa</Text>
-                <Text style={styles.cardNumber}>**** **** **** 0000</Text>
-              </LinearGradient>
-              <FontAwesome name="chevron-right" color="#fff" size={12} />
-            </View>
-            <View style={styles.headerArrowUpContainer}>
-              <View style={styles.arrowUpSphere}>
-                <FontAwesome style={{ marginTop: -2 }} name="chevron-up" color="#fff" size={10} />
-              </View>
-            </View>
+          <View>
+            <Feather name="bell" color="#fff" size={25} />
           </View>
         </View>
-        <ScrollView style={styles.mainContainer}>
-          <View style={styles.actionsContainer}>
-            <View style={{ justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
-              <RectButton onPress={() => navigate('scan')} style={styles.actionSphere}>
-                <Image style={{ marginTop: -2 }} source={qrCode} />
-              </RectButton>
-              <Text style={styles.actionText}>Código QR</Text>
+        <View style={styles.headerMainContent}>
+          <View style={{ ...styles.headerItem, borderBottomColor: '#1AADED', borderBottomWidth: 1 }}>
+            <Text style={styles.largeText}>R$ 0</Text>
+            <FontAwesome name="chevron-right" color="#fff" size={12} />
+          </View>
+          <View style={{ ...styles.headerItem, borderBottomColor: '#1AADED', borderBottomWidth: 1 }}>
+            <View style={styles.itemText}>
+              <Image source={statisticsIcon} style={{ marginRight: 10 }} />
+              <Text style={{ ...styles.smallText, maxWidth: 156 }}>Ganhe mais do que com a poupança</Text>
             </View>
-            <View style={{ justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
-              <View style={styles.actionSphere}>
-                <Image style={{ marginTop: -2 }} source={receive} />
-              </View>
-              <Text style={styles.actionText}>Adicionar dinheiro</Text>
+            <FontAwesome name="chevron-right" color="#fff" size={12} />
+          </View>
+          <View style={styles.headerItem}>
+            <LinearGradient start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} colors={['#0030AC', '#005BEB']} style={styles.card}>
+              <Text style={styles.smallText}>Visa</Text>
+              <Text style={styles.cardNumber}>**** **** **** 0000</Text>
+            </LinearGradient>
+            <FontAwesome name="chevron-right" color="#fff" size={12} />
+          </View>
+          <View style={styles.headerArrowUpContainer}>
+            <View style={styles.arrowUpSphere}>
+              <FontAwesome style={{ marginTop: -2 }} name="chevron-up" color="#fff" size={10} />
             </View>
-            <View style={{ justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
-              <View style={styles.actionSphere}>
-                <Image style={{ marginTop: -2 }} source={payWhite} />
-              </View>
-              <Text style={styles.actionText}>Transferir dinheiro</Text>
-            </View>
-            <View style={{ justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
-              <View style={styles.actionSphere}>
-                <Image style={{ marginTop: -2 }} source={moneyWhite} />
-              </View>
-              <Text style={styles.actionText}>Sacar dinheiro</Text>
-            </View>
-          </View>
-          <View style={styles.mainItem}>
-            <Text style={styles.normalCardText}>Use o dinheiro da sua conta para comprar pela internet com o Cartão Mercado Pago</Text>
-          </View>
-        </ScrollView>
-        <View style={styles.footer}>
-          <View style={styles.footerItem}>
-            <Feather name="home" color="#009EE3" size={20} />
-            <Text style={{ ...styles.tabText, color: '#009EE3' }}>Início</Text>
-          </View>
-          <View style={styles.footerItem}>
-            <Image source={money} />
-            <Text style={styles.tabText}>Seu dinheiro</Text>
-          </View>
-          <View style={styles.footerItem}>
-            <Image source={pay} />
-            <Text style={styles.tabText}>Pagar</Text>
-          </View>
-          <View style={styles.footerItem}>
-            <Image source={chargeIcon} />
-            <Text style={styles.tabText}>Cobrar</Text>
-          </View>
-          <View style={styles.footerItem}>
-            <Feather name="home" color="#898989" size={20} />
-            <Text style={styles.tabText}>Mais</Text>
           </View>
         </View>
       </View>
-    </>
+      <ScrollView style={styles.mainContainer}>
+        <View style={styles.actionsContainer}>
+          <View style={{ justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
+            <RectButton onPress={() => navigate('scan')} style={styles.actionSphere}>
+              <Image style={{ marginTop: -2 }} source={qrCode} />
+            </RectButton>
+            <Text style={styles.actionText}>Código QR</Text>
+          </View>
+          <View style={{ justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
+            <View style={styles.actionSphere}>
+              <Image style={{ marginTop: -2 }} source={receive} />
+            </View>
+            <Text style={styles.actionText}>Adicionar dinheiro</Text>
+          </View>
+          <View style={{ justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
+            <View style={styles.actionSphere}>
+              <Image style={{ marginTop: -2 }} source={payWhite} />
+            </View>
+            <Text style={styles.actionText}>Transferir dinheiro</Text>
+          </View>
+          <View style={{ justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
+            <View style={styles.actionSphere}>
+              <Image style={{ marginTop: -2 }} source={moneyWhite} />
+            </View>
+            <Text style={styles.actionText}>Sacar dinheiro</Text>
+          </View>
+        </View>
+        <View style={styles.mainItem}>
+          <Text style={styles.normalCardText}>Use o dinheiro da sua conta para comprar pela internet com o Cartão Mercado Pago</Text>
+        </View>
+      </ScrollView>
+      <View style={styles.footer}>
+        <View style={styles.footerItem}>
+          <Feather name="home" color="#009EE3" size={20} />
+          <Text style={{ ...styles.tabText, color: '#009EE3' }}>Início</Text>
+        </View>
+        <View style={styles.footerItem}>
+          <Image source={money} />
+          <Text style={styles.tabText}>Seu dinheiro</Text>
+        </View>
+        <View style={styles.footerItem}>
+          <Image source={pay} />
+          <Text style={styles.tabText}>Pagar</Text>
+        </View>
+        <View style={styles.footerItem}>
+          <Image source={chargeIcon} />
+          <Text style={styles.tabText}>Cobrar</Text>
+        </View>
+        <View style={styles.footerItem}>
+          <Feather name="home" color="#898989" size={20} />
+          <Text style={styles.tabText}>Mais</Text>
+        </View>
+      </View>
+    </View>
   );
 };
 
